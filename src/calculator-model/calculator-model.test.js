@@ -1,5 +1,4 @@
-import { createDefaultModel, setDisplay, appendDisplay, cacheOperation, evaluate, getDisplay, upateContext } from './calculator-model'
-import { create } from 'react-test-renderer'
+import { createDefaultModel, setDisplay, appendDisplay, cacheOperation, evaluate, getDisplay, upateContext } from '.'
 
 describe('calculator-model', () => {
     describe('createDefaultModel', () => {
