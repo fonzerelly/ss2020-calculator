@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
 
+import {CalculatorProvider} from './calculator-context'
+import Display from './display'
+
 function App() {
   return (
+    <CalculatorProvider>
     <div className="app">
       <div className="calculator">
-        <div className="display">
-          <p className="display__value">0</p>
-        </div>
+        <Display/>
         <div className="keypad">
           <div className="keypad__number">
             <div className="keypad__key--number">
@@ -69,6 +71,7 @@ function App() {
         </div>
       </div>
     </div>
+    </CalculatorProvider>
   );
 }
 
