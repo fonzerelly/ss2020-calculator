@@ -5,6 +5,7 @@ import {CalculatorProvider} from './calculator-context'
 import Display from './display'
 import Numpad from './numpad'
 import Opkey from './operatorkey'
+import Evalkey from './evaluatekey'
 
 function App() {
   return (
@@ -20,11 +21,7 @@ function App() {
             <Opkey label="+"/>
             <Opkey label="-"/>
           </div>
-          <div className="keypad__submit">
-          <div className="keypad__key--submit">
-              <p className="keypad__key__value">=</p>
-            </div>
-          </div>
+          <Evalkey/>
         </div>
       </div>
     </div>

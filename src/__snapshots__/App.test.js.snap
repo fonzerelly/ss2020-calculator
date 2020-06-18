@@ -189,6 +189,7 @@ exports[`App render as always 1`] = `
       </div>
       <div
         className="keypad__submit"
+        onClick={[Function]}
       >
         <div
           className="keypad__key--submit"
