@@ -4,6 +4,7 @@ import './App.css';
 import {CalculatorProvider} from './calculator-context'
 import Display from './display'
 import Numpad from './numpad'
+import Opkey from './operatorkey'
 
 function App() {
   return (
@@ -14,18 +15,10 @@ function App() {
         <div className="keypad">
           <Numpad/>
           <div className="keypad__operator">
-            <div className="keypad__key--operator">
-              <p className="keypad__key__value">/</p>
-            </div>
-            <div className="keypad__key--operator">
-              <p className="keypad__key__value">*</p>
-            </div>
-            <div className="keypad__key--operator">
-              <p className="keypad__key__value">+</p>
-            </div>
-            <div className="keypad__key--operator">
-              <p className="keypad__key__value">-</p>
-            </div>
+            <Opkey label="/"/>
+            <Opkey label="*"/>
+            <Opkey label="+"/>
+            <Opkey label="-"/>
           </div>
           <div className="keypad__submit">
           <div className="keypad__key--submit">
