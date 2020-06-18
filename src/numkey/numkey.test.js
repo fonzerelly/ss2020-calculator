@@ -5,7 +5,7 @@ import {CalculatorProvider, CalculatorContext} from '../calculator-context'
 // import CalculatorModel from '../calculator-model'
 
 jest.mock('../calculator-model')
-const {appendDisplay, updateContext} = require('../calculator-model')
+const {appendDisplay, updateContext, createDefaultModel} = require('../calculator-model')
 
 describe('numkey', () => {
     it('should render key 1', () => {
@@ -35,5 +35,24 @@ describe('numkey', () => {
             }
         ))
         expect(updateContext).toHaveBeenCalledWith(context, appendDisplay, "2")
+    })
+    describe('ce', () => {
+        it('should reset calculator-model', () => {
+            const setter = jasmine.createSpy('setter')
+        const context = [{display: "1"}, setter]
+        const { container } = render(
+            <CalculatorContext.Provider value={context}>
+                <Numkey label="ce"/>
+            </CalculatorContext.Provider>
+        )
+        fireEvent(getByText(container, "ce"), new MouseEvent(
+            'click',
+            {
+                bubbles: true,
+                cancelable: true
+            }
+        ))
+        expect(updateContext).toHaveBeenCalledWith(context, createDefaultModel)
+        })
     })
 })
