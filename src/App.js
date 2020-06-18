@@ -3,6 +3,7 @@ import './App.css';
 
 import {CalculatorProvider} from './calculator-context'
 import Display from './display'
+import Numpad from './numpad'
 
 function App() {
   return (
@@ -11,44 +12,7 @@ function App() {
       <div className="calculator">
         <Display/>
         <div className="keypad">
-          <div className="keypad__number">
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">9</p>
-            </div>
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">8</p>
-            </div>
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">7</p>
-            </div>
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">6</p>
-            </div>
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">5</p>
-            </div>
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">4</p>
-            </div>
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">3</p>
-            </div>
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">2</p>
-            </div>
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">1</p>
-            </div>
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">.</p>
-            </div>
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">0</p>
-            </div>
-            <div className="keypad__key--number">
-              <p className="keypad__key__value">ce</p>
-            </div>
-          </div>
+          <Numpad/>
           <div className="keypad__operator">
             <div className="keypad__key--operator">
               <p className="keypad__key__value">/</p>

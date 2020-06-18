@@ -13,7 +13,11 @@ export default function Numpad () {
     return (
         <div className="keypad__number">
             {orderedKeys.map((digit, index) => {
-                return (<h1 key={index}>{digit}</h1>)
+                return (
+                <div className="keypad__key--number" key={index}>
+                    <p className="keypad__key__value">{digit}</p>
+                </div>
+                )
             })}
         </div>
     )
