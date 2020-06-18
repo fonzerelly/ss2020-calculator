@@ -21,6 +21,9 @@ export function appendDisplay(model, displayValue) {
     if (clonedModel.display.match(/^0+$/)) {
         return setDisplay(model, displayValue)
     }
+    if (displayValue === '.' && clonedModel.display.match(/\./)) {
+        return clonedModel
+    }
     return setDisplay(model, model.display + String(displayValue))
 }
 

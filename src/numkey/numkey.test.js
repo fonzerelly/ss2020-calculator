@@ -1,8 +1,7 @@
 import {render, fireEvent, getByText} from '@testing-library/react'
 import React from 'react'
 import Numkey from './'
-import {CalculatorProvider, CalculatorContext} from '../calculator-context'
-// import CalculatorModel from '../calculator-model'
+import {CalculatorContext} from '../calculator-context'
 
 jest.mock('../calculator-model')
 const {appendDisplay, updateContext, createDefaultModel} = require('../calculator-model')

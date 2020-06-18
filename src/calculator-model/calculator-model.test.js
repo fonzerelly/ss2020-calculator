@@ -48,6 +48,20 @@ describe('calculator-model', () => {
             const resultingModel = appendDisplay(initialModel, "1")
             expect(resultingModel.display).toEqual("1")
         })
+
+        it('should allow only only one dot in display', () => {
+            const initialModel = createDefaultModel();
+            initialModel.display = "3.14"
+            const resultingModel = appendDisplay(initialModel, ".")
+            expect(resultingModel.display).toEqual("3.14")
+        })
+
+        it('should allow only only one dot in display', () => {
+            const initialModel = createDefaultModel();
+            initialModel.display = "3.14"
+            const resultingModel = appendDisplay(initialModel, "1")
+            expect(resultingModel.display).toEqual("3.141")
+        })
     })
     describe('cacheOperation', () => {
         cloneCheck(cacheOperation);
