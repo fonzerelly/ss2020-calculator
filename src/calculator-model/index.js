@@ -38,6 +38,8 @@ export function evaluate(model) {
     let clonedModel = clone(model)
     clonedModel.inputCache += clonedModel.display
     clonedModel.display = String(eval(clonedModel.inputCache))
+    clonedModel.inputCache = ""
+
     return clonedModel
 }
 

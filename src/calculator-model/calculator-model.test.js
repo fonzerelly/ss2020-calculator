@@ -95,7 +95,7 @@ describe('calculator-model', () => {
             initialModel.display = "22"
             initialModel.inputCache = "11+"
             const resultingModel = evaluate(initialModel)
-            expect(resultingModel.inputCache).toEqual("11+22")
+            expect(resultingModel.inputCache).toEqual("")
         })
         it('should set display to result', () => {
             const initialModel = createDefaultModel();
