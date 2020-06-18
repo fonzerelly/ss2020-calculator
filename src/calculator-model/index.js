@@ -12,7 +12,7 @@ const clone = (model) => {
 // const clone = (model) => model
 export function setDisplay(model, displayValue) {
     let clonedModel = clone(model)
-    clonedModel.display = displayValue;
+    clonedModel.display = String(displayValue);
     return clonedModel;
 }
 
@@ -42,7 +42,7 @@ export function getDisplay(model) {
     return model.display
 }
 
-export function upateContext(context, fn, value) {
+export function updateContext(context, fn, value) {
     const [getter, setter] = context;
     return setter(fn(getter, value))
 }

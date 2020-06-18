@@ -1,4 +1,4 @@
-import { createDefaultModel, setDisplay, appendDisplay, cacheOperation, evaluate, getDisplay, upateContext } from '.'
+import { createDefaultModel, setDisplay, appendDisplay, cacheOperation, evaluate, getDisplay, updateContext } from '.'
 
 describe('calculator-model', () => {
     describe('createDefaultModel', () => {
@@ -24,6 +24,12 @@ describe('calculator-model', () => {
             const initialModel = createDefaultModel()
             const resultingModel = setDisplay(initialModel, "42")
             expect(resultingModel.display).toEqual("42")
+        })
+
+        it('should turn passed in values to Strings', () => {
+            const initialModel = createDefaultModel()
+            const resultingModel = setDisplay(initialModel, 42)
+            expect(resultingModel.display).toBe("42")
         })
     })
     describe('appendDisplay', () => {
@@ -105,7 +111,7 @@ describe('calculator-model', () => {
         it('should apply a function to the getter of a react Context', () => {
             const updateFn = jasmine.createSpy('updateFn')
             const valueToUpdateBy = "100";
-            upateContext(fakeReactContext("defaultValue"), updateFn, valueToUpdateBy)
+            updateContext(fakeReactContext("defaultValue"), updateFn, valueToUpdateBy)
             expect(updateFn).toHaveBeenCalledWith("defaultValue", valueToUpdateBy)
         })
 
@@ -113,7 +119,7 @@ describe('calculator-model', () => {
             const fakeFn = jasmine.createSpy('fakeFn').and.returnValue("resultValue")
             const context = fakeReactContext("defaultValue")
             const setter = context[1]
-            upateContext(context, fakeFn)
+            updateContext(context, fakeFn)
             expect(setter).toHaveBeenCalledWith("resultValue")
         })
     })
